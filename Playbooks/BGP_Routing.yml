@@ -1,5 +1,4 @@
 - host: Router3
- gather_facts:false
   tasks:
     - name: BGP Config
       cisco.ios.ios_bgp:
