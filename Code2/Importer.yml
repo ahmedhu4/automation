@@ -1,0 +1,11 @@
+- name: Start playbook for BGP
+import_playbook: BGP_Routing.yml
+
+- name: Start playbook for OSPF
+import_playbook: OSPF_Routing.yml
+
+- name: Start playbook for EIGRP
+import_playbook: EIGRP_Routing.yml
+
+- name: Start playbook for Loopback Interfaces
+import_playbook: LoopBack_Routing.yml

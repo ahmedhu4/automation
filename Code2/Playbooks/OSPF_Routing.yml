@@ -1,0 +1,25 @@
+- host: Router3
+ gether_facts:false
+ - name: Router2
+  cisco.ios.ios_ospf_interfaces:
+    config:
+      - name: GigabitEthernet0/2
+        address_family:
+          - afi: ipv4
+            process:
+              id: 10
+              area_id: 0
+              state: merged
+
+- host: Router3
+ gether_facts:false    
+ - name: Router3
+  cisco.ios.ios_ospf_interfaces:
+    config:
+      - name: GigabitEthernet0/0
+        address_family:
+          - afi: ipv4
+            process:
+              id: 11
+              area_id: 0
+              state: merged
