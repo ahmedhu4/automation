@@ -31,7 +31,6 @@
                 process:
                   id: 11
                   area_id: 0
-              state: merged
             network:
             - address: 192.168.4.0
               wildcard: 0.0.0.255
