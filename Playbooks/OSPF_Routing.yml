@@ -17,7 +17,7 @@
             - address: 192.168.4.0
               wildcard: 0.0.0.255
               area: 0
-        state: merged
+
 
 - hosts: Router3
   gather_facts: false
@@ -35,4 +35,4 @@
             - address: 192.168.4.0
               wildcard: 0.0.0.255
               area: 0
-        state: merged
+
