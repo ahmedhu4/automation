@@ -17,6 +17,6 @@
              network:
                - address: 192.168.4.0
                  wildcard: 0.0.0.255
-                area: 0
+                 area: 0
  
         state: replaced
