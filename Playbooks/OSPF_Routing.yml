@@ -1,7 +1,7 @@
 #OSPF Configuration 
 #afi= address family indicator
 
-- host: Router2
+- hosts: Router2
  gather_facts:false
  - name: Router2
    ios_ospf_interfaces:
@@ -19,7 +19,7 @@
          area: 0
          state: merged
 
-- host: Router3
+- hosts: Router3
  gather_facts:false    
  - name: Router3
    ios_ospf_interfaces:
