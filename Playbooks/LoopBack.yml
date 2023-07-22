@@ -6,14 +6,14 @@
       lines:
         - description Loopback
         - ip address 192.168.6.1 255.255.255.0
-        - ipv6 address 2001:DB8:CAFE:6::/64 eui-64
+        - ipv6 address 2001:DB8:CAFE:6::/64
       parents: interface Loopback0
   - name: Int Loopback1
     cisco.ios.ios_config:
       lines:
         - description LoopbackEigrp
         - ip address 192.168.1.1 255.255.255.0
-        - ipv6 address 2001:DB8:CAFE:1::1/64 eui-64
+        - ipv6 address 2001:DB8:CAFE:1::1/64
       parents: interface Loopback1
 
 - hosts: Router2
@@ -25,7 +25,7 @@
       lines:
         - description Loopback
         - ip address 192.168.3.1 255.255.255.0
-        - ipv6 address 2001:DB8:CAFE:3::1/64 eui-64
+        - ipv6 address 2001:DB8:CAFE:3::1/64
       parents: interface Loopback0
  
 
@@ -37,7 +37,7 @@
       lines:
         - description Loopback
         - ip address 192.168.5.1 255.255.255.0
-        - ipv6 address 2001:DB8:CAFE:5::1/64 eui-64
+        - ipv6 address 2001:DB8:CAFE:5::1/64 
       parents: interface Loopback0
 
 - hosts: Router4
@@ -48,6 +48,6 @@
       lines:
         - description Loopback
         - ip address 192.168.99.1 255.255.255.0
-        - ipv6 address 2001:DB8:99:1::1/64 eui-64
+        - ipv6 address 2001:DB8:99:1::1/64 
       parents: interface Loopback0
   
