@@ -3,7 +3,7 @@
 - hosts: Router3
   tasks:
     - name: BGP Config
-      cisco.ios.ios_bgp:
+      ios_bgp:
         config:
           bgp_as: 65000
           router_id: 192.0.0.2
@@ -15,7 +15,7 @@
 - hosts: Router4
   tasks:
     - name: BGP Config
-      cisco.ios.ios_bgp:
+      ios_bgp:
         config:
           bgp_as: 65100
           router_id: 192.0.0.3
