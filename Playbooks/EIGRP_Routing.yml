@@ -19,4 +19,5 @@
         - eigrp router-id 192.168.1.2
         - network 192.168.2.0 0.0.0.255
         - passive-interface loopback0
+        - redistribute ospf 1
       parents: router eigrp 65000
