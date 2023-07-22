@@ -13,13 +13,13 @@
                 router_lsa: true
                 on_startup:
                 time: 110
-          areas:
-            - area_id: "0"
-              capability: false
-          network:
-            - address: 192.168.4.0
-              wildcard: 0.0.0.255
-              area: 0
+            areas:
+              - area_id: "0"
+                capability: false
+            network:
+              - address: 192.168.4.0
+               wildcard: 0.0.0.255
+               area: 0
  
         state: replaced
 
