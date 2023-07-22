@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - name: Router2
-      ios_ospf_interfaces:
+      cisco.ios_ospf_interfaces:
         config:
           - name: GigabitEthernet0/2
             address_family:
@@ -23,7 +23,7 @@
   gather_facts: false
   tasks:
     - name: Router2
-      ios_ospf_interfaces:
+      cisco.ios_ospf_interfaces:
         config:
           - name: GigabitEthernet0/0
             address_family:
