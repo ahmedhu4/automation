@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - name: Router2 test
-      cisco.ios.ios_ospfv2:
+      ios_ospfv2:
         config:
          processes:
            - process_id: 1
