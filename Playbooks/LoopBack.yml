@@ -1,14 +1,14 @@
 - host: Router1
   gather_facts: false
   - name: Loopback0
-    ios_config:
+    cisco.ios.ios_config:
       lines:
         - description Loopback
         - ip address 192.168.1.0 255.255.255.255
         - ipv6 address 2001:DB8:CAFE:1::/64 eui-64
       parents: interface Loopback0
   - name: Int Loopback1
-    ios_config:
+    cisco.ios.ios_config:
       lines:
         - description LoopbackEigrp
         - ip address 192.168.6.0 255.255.255.255
@@ -19,7 +19,7 @@
   gather_facts: false
   - name: Loopback0
 #Loopback Interface configuration 
-    ios_config:
+    cisco.ios.ios_config:
       lines:
         - description Loopback
         - ip address 192.168.3.0 255.255.255.255
@@ -30,7 +30,7 @@
 - host: Router3
   gather_facts: false
   - name: Loopback0
-    ios_config:
+    cisco.ios.ios_config:
       lines:
         - description Loopback
         - ip address 192.168.5.0 255.255.255.255
@@ -40,7 +40,7 @@
 - host: Router4
   gather_facts: false
   - name: Loopback0
-    ios_config:
+    cisco.ios.ios_config:
       lines:
         - description Loopback
         - ip address 192.168.99.0 255.255.255.255
