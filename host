@@ -12,9 +12,12 @@ routers:
 
   vars:
     ansible_network_os: ios
-    ansible_user: "{{User}}"
-    ansible_password:  "{{Passwrd}}"
+    ansible_user: admin
+    ansible_password:  automation
     ansible_connection:  network_cli
+    ansible_become_method: enable
+    ansible_become_user: admin
+    ansible_become_password: automation
 
 
 #dsafasdffasdfasdf

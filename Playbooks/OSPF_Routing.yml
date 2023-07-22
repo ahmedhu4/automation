@@ -4,7 +4,7 @@
 - host: Router2
  gather_facts:false
  - name: Router2
-  cisco.ios.ios_ospf_interfaces:
+   ios_ospf_interfaces:
     config:
       - name: GigabitEthernet0/2
         address_family:
@@ -22,7 +22,7 @@
 - host: Router3
  gather_facts:false    
  - name: Router3
-  cisco.ios.ios_ospf_interfaces:
+   ios_ospf_interfaces:
     config:
       - name: GigabitEthernet0/0
         address_family:
