@@ -16,9 +16,11 @@
             areas:
               - area_id: "0"
                 capability: false
+                authentication:
+                  enable: false
             network:
               - address: 192.168.4.0
-               wildcard: 0.0.0.255
+                wildcard: 0.0.0.255
                area: 0
  
         state: replaced
