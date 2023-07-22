@@ -1,4 +1,7 @@
+#BGP Configuration
+
 - host: Router3
+ gather_facts:false
   tasks:
     - name: BGP Config
       cisco.ios.ios_bgp:
@@ -11,6 +14,7 @@
               remote_as: 65100
 
 - host: Router4
+ gather_facts:false
   tasks:
     - name: BGP Config
       cisco.ios.ios_bgp:

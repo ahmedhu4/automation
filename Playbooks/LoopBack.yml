@@ -18,6 +18,7 @@
 - host: Router2
   gather_facts:false
   - name: Int Loopback0
+#Loopback Interface configuration 
         ios_config:
           lines:
           - description Loopback

@@ -1,4 +1,8 @@
+#OSPF Configuration 
+#afi= address family indicator
+
 - host: Router2
+ gather_facts:false
  - name: Router2
   cisco.ios.ios_ospf_interfaces:
     config:
@@ -9,8 +13,14 @@
               id: 10
               area_id: 0
               state: merged
+        network:
+         - address: 192.168.4.0
+         wildcard: 0.0.0.255
+         area: 0
+         state: merged
 
-- host: Router3    
+- host: Router3
+ gather_facts:false    
  - name: Router3
   cisco.ios.ios_ospf_interfaces:
     config:
@@ -20,4 +30,9 @@
             process:
               id: 11
               area_id: 0
+              state: merged
+            network:
+              - address: 192.168.4.0
+              wildcard: 0.0.0.255
+              area: 0
               state: merged
