@@ -2,7 +2,7 @@
 #afi= address family indicator
 
 - hosts: Router2
-  gather_facts:false
+  gather_facts: false
   tasks:
     - name: Router2
       ios_ospf_interfaces:
@@ -21,7 +21,7 @@
         state: merged
 
 - hosts: Router3
-  gather_facts:false
+  gather_facts: false
   tasks:
     - name: Router2
       ios_ospf_interfaces:
