@@ -6,11 +6,15 @@
   tasks:
     - name: Router2 test
       cisco.ios.ios_ospf_interfaces:
-      config:
-        -name: GigabitEthernet0/2
+        config:
+          - name: GigabitEthernet0/2
+            address_family:
+              - afi: ipv4
+                process:
+                  id: 1
+                  area_id: 0
 
-
-      state: replaced
+        state: replaced
 
 
 
