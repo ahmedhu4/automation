@@ -1,11 +1,11 @@
   routers:
-   hosts:
+    hosts:
     Router1: ansible_host= 192.168.2.1
     Router2: ansible_host= 192.168.4.1
     Router3: ansible_host= 192.168.77.2
     Router4: ansible_host= 192.168.77.1
 
-  vars:
+    vars:
     ansible_network_os: ios
     ansible_user: "{{User}}"
     ansible_password:  "{{Passwrd}}"
