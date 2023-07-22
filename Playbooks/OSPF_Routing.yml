@@ -4,8 +4,13 @@
 - hosts: Router2
   gather_facts: false
   tasks:
-    - name: Router2
+    - name: Router2 test
       cisco.ios.ios_ospf_interfaces:
+      config:
+        -name: GigabitEthernet0/2
+
+
+      state: replaced
 
 
 
