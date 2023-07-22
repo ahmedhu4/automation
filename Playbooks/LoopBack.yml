@@ -1,4 +1,4 @@
-- host: Router1
+- hosts: Router1
   gather_facts: false
   - name: Loopback0
     cisco.ios.ios_config:
@@ -15,7 +15,7 @@
         - ipv6 address 2001:DB8:CAFE:6::/64 eui-64
       parents: interface Loopback1
 
-- host: Router2
+- hosts: Router2
   gather_facts: false
   - name: Loopback0
 #Loopback Interface configuration 
@@ -27,7 +27,7 @@
       parents: interface Loopback0
  
 
-- host: Router3
+- hosts: Router3
   gather_facts: false
   - name: Loopback0
     cisco.ios.ios_config:
@@ -37,7 +37,7 @@
         - ipv6 address 2001:DB8:CAFE:5::/64 eui-64
       parents: interface Loopback0
 
-- host: Router4
+- hosts: Router4
   gather_facts: false
   - name: Loopback0
     cisco.ios.ios_config:
