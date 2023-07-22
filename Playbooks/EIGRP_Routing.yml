@@ -4,19 +4,19 @@
   gather_facts: false
   tasks:
   - name: EIGRP Config
-        cisco.ios.ios_config:
-          lines:
-            - eigrp router-id 192.168.1.1
-            - network 192.168.2.0 0.0.0.255
-            - passive-interface loopback0
-          parents: router eigrp 65000
+    cisco.ios.ios_config:
+      lines:
+        - eigrp router-id 192.168.1.1
+        - network 192.168.2.0 0.0.0.255
+        - passive-interface loopback0
+      parents: router eigrp 65000
 
 - hosts: Router2
   tasks:
   - name: EIGRP Config
-        cisco.ios.ios_config:
-          lines:
-            - eigrp router-id 192.168.1.2
-            - network 192.168.2.0 0.0.0.255
-            - passive-interface loopback0
-          parents: router eigrp 65000
+    cisco.ios.ios_config:
+      lines:
+        - eigrp router-id 192.168.1.2
+        - network 192.168.2.0 0.0.0.255
+        - passive-interface loopback0
+      parents: router eigrp 65000
