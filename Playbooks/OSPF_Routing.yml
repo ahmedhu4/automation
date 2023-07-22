@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - name: Router2
-      cisco.ios.ios_ospf:
+      cisco.ios.ios_ospfv2:
           config:
             address_family:
               - afi: ipv4
