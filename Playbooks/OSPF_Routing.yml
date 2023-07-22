@@ -5,6 +5,7 @@
   gather_facts: false
   tasks:
     - name: Router2
+      ios_ospf_interfaces:
 
 
 
