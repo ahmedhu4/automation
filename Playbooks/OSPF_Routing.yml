@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - name: Router2
-        ciso.ios.ios_ospf_interfaces:
+      ciso.ios.ios_ospf_interfaces:
           config:
             address_family:
               - afi: ipv4
