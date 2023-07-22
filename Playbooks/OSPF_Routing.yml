@@ -3,36 +3,38 @@
 
 - hosts: Router2
   gather_facts:false
- - name: Router2
-   ios_ospf_interfaces:
-    config:
-      - name: GigabitEthernet0/2
-        address_family:
-          - afi: ipv4
-            process:
-              id: 10
-              area_id: 0
-              state: merged
-        network:
-         - address: 192.168.4.0
-         wildcard: 0.0.0.255
-         area: 0
-         state: merged
-
-- hosts: Router3
-  gather_facts:false    
- - name: Router3
-   ios_ospf_interfaces:
-    config:
-      - name: GigabitEthernet0/0
-        address_family:
-          - afi: ipv4
-            process:
-              id: 11
-              area_id: 0
+  tasks:
+    - name: Router2
+      ios_ospf_interfaces:
+        config:
+          - name: GigabitEthernet0/2
+            address_family:
+              - afi: ipv4
+                process:
+                  id: 10
+                  area_id: 0
               state: merged
             network:
-              - address: 192.168.4.0
+            - address: 192.168.4.0
               wildcard: 0.0.0.255
               area: 0
+        state: merged
+
+- hosts: Router3
+  gather_facts:false
+  tasks:
+    - name: Router2
+      ios_ospf_interfaces:
+        config:
+          - name: GigabitEthernet0/0
+            address_family:
+              - afi: ipv4
+                process:
+                  id: 11
+                  area_id: 0
               state: merged
+            network:
+            - address: 192.168.4.0
+              wildcard: 0.0.0.255
+              area: 0
+        state: merged
