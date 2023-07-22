@@ -1,6 +1,6 @@
 - host: Router1
   gather_facts: false
-  - name: Int Loopback0
+  - name: Loopback0
     ios_config:
       lines:
         - description Loopback
@@ -17,7 +17,7 @@
 
 - host: Router2
   gather_facts: false
-  - name: Int Loopback0
+  - name: Loopback0
 #Loopback Interface configuration 
     ios_config:
       lines:
@@ -29,7 +29,7 @@
 
 - host: Router3
   gather_facts: false
-  - name: Int Loopback0
+  - name: Loopback0
     ios_config:
       lines:
         - description Loopback
@@ -39,7 +39,7 @@
 
 - host: Router4
   gather_facts: false
-  - name: Int Loopback0
+  - name: Loopback0
     ios_config:
       lines:
         - description Loopback
