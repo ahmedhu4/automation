@@ -1,6 +1,6 @@
 #BGP Configuration
 
-- host: Router3
+- hosts: Router3
   tasks:
     - name: BGP Config
       cisco.ios.ios_bgp:
@@ -12,7 +12,7 @@
             - neighbor: 192.168.77.1
               remote_as: 65100
 
-- host: Router4
+- hosts: Router4
   tasks:
     - name: BGP Config
       cisco.ios.ios_bgp:

@@ -1,5 +1,5 @@
   routers:
-   host:
+   hosts:
     Router1: ansible_host= 192.168.2.1
     Router2: ansible_host= 192.168.4.1
     Router3: ansible_host= 192.168.77.2
@@ -11,4 +11,4 @@
     ansible_password:  "{{Passwrd}}"
     ansible_connection:  network_cli
 
-#dsafasdf
+#dsafasdffasdfasdf
