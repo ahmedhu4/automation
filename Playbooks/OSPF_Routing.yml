@@ -20,7 +20,6 @@
                 process:
                   id: 2
                   area_id: 0
-                  unicast: true
                 network:
                   broadcast: true
 
@@ -45,7 +44,6 @@
                 process:
                   id: 2
                   area_id: 0
-                  unicast: true
                 network:
                   broadcast: true
 
