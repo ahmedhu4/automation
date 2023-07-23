@@ -9,8 +9,6 @@
         config:
           processes:
             - process_id: 1
-              max_metric:
-                router_lsa: true
               address_family:
                - afi: ipv4
                  unicast: true
