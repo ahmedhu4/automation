@@ -33,8 +33,7 @@
             - prefix: 192.168.77.0 
               masklen: 24
           address_family:
-            -afi: ipv6
-             safi: unicast
+            - afi: ipv6
             networks:
               - prefix: 2001:DB8:FEED:77::1/64
                 masklen: 64
