@@ -5,7 +5,6 @@
   - name: Routes from EIGRP Into OSPF
     cisco.ios.ios_config:
       lines:
-        - description OSPF IPv4
         - redistribute eigrp 6500 subnets
         - ipv6 unicast-routing
       parents: router ospf 1
