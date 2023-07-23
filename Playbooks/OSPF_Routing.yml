@@ -11,7 +11,6 @@
             - process_id: 1
               max_metric:
                 router_lsa: true
-                on_startup:
                   time: 110
               address_family:
                - afi: ipv4
