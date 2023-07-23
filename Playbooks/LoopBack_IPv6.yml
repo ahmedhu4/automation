@@ -1,0 +1,95 @@
+#Loopback,IPv6, and link-local, configuration using ios_config module
+- hosts: Router1
+  gather_facts: false
+  tasks:
+  - name: Loopback0
+    cisco.ios.ios_config:
+      lines:
+        - description Loopback
+        - ip address 192.168.6.1 255.255.255.0
+        - ipv6 address 2001:DB8:CAFE:6::/64
+      parents: interface Loopback0
+  - name: Int Loopback1
+    cisco.ios.ios_config:
+      lines:
+        - description LoopbackEigrp
+        - ip address 192.168.1.1 255.255.255.0
+        - ipv6 address 2001:DB8:CAFE:1::1/64
+      parents: interface Loopback1
+  - name: Ipv6
+    cisco.ios.ios_config:
+      lines: 
+        - ipv6 address 2001:DB8:CAFE:2::1/64
+        - ipv6 unicast-routing
+      parents: Interface GigabitEthernet0/1
+  - name: Ipv6
+    cisco.ios.ios_config:
+      lines: 
+        - ipv6 address fe80::1 link-local
+      parents: Interface GigabitEthernet0/0
+
+- hosts: Router2
+  gather_facts: false
+  tasks:
+  - name: Loopback0
+    cisco.ios.ios_config:
+      lines:
+        - description Loopback
+        - ip address 192.168.3.1 255.255.255.0
+        - ipv6 address 2001:DB8:CAFE:3::1/64
+      parents: interface Loopback0
+  - name: Ipv6
+    cisco.ios.ios_config:
+      lines: 
+        - ipv6 address 2001:DB8:CAFE:4::2/64
+        - ipv6 unicast-routing
+      parents: Interface GigabitEthernet0/2
+  - name: Ipv6 
+    cisco.ios.ios_config:
+      lines: 
+        - ipv6 address 2001:DB8:CAFE:2::1/64
+        - ipv6 address fe80::2 link-local
+        - ipv6 unicast-routing
+      parents: Interface GigabitEthernet0/0
+
+- hosts: Router3
+  gather_facts: false
+  tasks:
+  - name: Loopback0
+    cisco.ios.ios_config:
+      lines:
+        - description Loopback
+        - ip address 192.168.5.1 255.255.255.0
+        - ipv6 address 2001:DB8:CAFE:5::1/64 
+      parents: interface Loopback0
+  - name: Ipv6 
+    cisco.ios.ios_config:
+      lines: 
+        - ipv6 address 2001:DB8:CAFE:4::1/64
+        - ipv6 address fe80::3 link-local
+        - ipv6 unicast-routing
+      parents: Interface GigabitEthernet0/0
+  - name: ipv6
+    cisco.ios.ios_config:
+      lines: 
+        - ipv6 address 2001:DB8:FEED:77::2/64
+        - ipv6 unicast-routing
+      parents: Interface GigabitEthernet0/1
+
+- hosts: Router4
+  gather_facts: false
+  tasks:
+  - name: Loopback0
+    cisco.ios.ios_config:
+      lines:
+        - description Loopback
+        - ip address 192.168.99.1 255.255.255.0
+        - ipv6 address 2001:DB8:99:1::1/64 
+      parents: interface Loopback0
+  - name: Ipv6 
+    cisco.ios.ios_config:
+      lines: 
+        - ipv6 address 2001:DB8:FEED:77::1/64
+        - ipv6 address fe80::4 link-local
+        - ipv6 unicast-routing
+      parents: Interface GigabitEthernet0/0
