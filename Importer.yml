@@ -13,7 +13,7 @@
   import_playbook: Playbooks/EIGRP_Routing.yml
 
 - name: Start playbook for EIGRP
-  import_playbook: Playbooks/Redistrubution.yml
+  import_playbook: Playbooks/Redis.yml
 
 
 
