@@ -43,8 +43,7 @@
       cisco.ios.ios_ospfv3:
         config:
           processes:
-          - process_id: 100
-            router_id: 203.0.113.20
+          - process_id: 1
             address_family:
               afi: ipv6
               safi: unicast
