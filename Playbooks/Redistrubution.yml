@@ -12,7 +12,7 @@
 - hosts: Router3
   gather_facts: false
   tasks:
-  - name: Route from BGP into OSPF
+  - name: Routes from BGP into OSPF
     cisco.ios.ios_config:
       lines:
         - redistribute bgp 65000 subnets
