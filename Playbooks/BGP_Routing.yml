@@ -32,8 +32,12 @@
           networks:
             - prefix: 192.168.77.0 
               masklen: 24
-            - prefix: 2001:DB8:FEED:77::1/64
-              masklen: 64
+          address_family:
+            -afi: ipv6
+             safi: unicast
+            networks:
+              - prefix: 2001:DB8:FEED:77::1/64
+                masklen: 64
         operation: merge
 
 
