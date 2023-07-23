@@ -13,7 +13,7 @@
             - neighbor: 192.168.77.1
               remote_as: 65100
           networks:
-            - prefixs: 192.168.77.0
+            - prefix: 192.168.77.0
               masklen: 24
         operation: replace
 
@@ -30,7 +30,7 @@
             - neighbor: 192.168.77.2
               remote_as: 65000
           networks:
-            - prefixs: 192.168.77.0
+            - prefix: 192.168.77.0
               masklen: 24
         operation: replace
 
