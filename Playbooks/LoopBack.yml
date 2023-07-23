@@ -50,7 +50,7 @@
       lines: 
         - ipv6 address 2001:DB8:CAFE:4::1/64
         - ipv6 unicast-routing
-      parents: Interface GigabitEthernet0/2
+      parents: Interface GigabitEthernet0/0
 
 - hosts: Router4
   gather_facts: false
