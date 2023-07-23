@@ -5,9 +5,9 @@
   - name: Routes from EIGRP Into OSPF
     cisco.ios.ios_config:
       lines:
+        - redistribute eigrp 6500 subnets
         - network 192.168.4.0 0.0.0.255 area 0
         - network 192.168.2.0 0.0.0.255 area 0
-        - redistribute eigrp 6500 subnets
       parents: router ospf 1 
 
 - hosts: Router3
@@ -17,6 +17,7 @@
     cisco.ios.ios_config:
       lines:
         - redistribute bgp 65000 subnets
+        - network 192.168.77.0 0.0.0.255 area 0
       parents: Router OSPF 1
   - name: Routes from OSPF into BGP
     cisco.ios.ios_config:
