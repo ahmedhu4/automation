@@ -24,9 +24,6 @@
           log_neighbor_changes: true
           neighbors:
             - neighbor: 192.168.77.2
-              remote_as: 65000
-        address_family:
-          afi: ipv4
           networks:
             masklen: 255.255.255.0
             prefix: 192.168.77.0 
