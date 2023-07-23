@@ -43,9 +43,6 @@
       cisco.ios.ios_ospfv3:
         config:
           processes:
-          - process_id: 1
-            address_family:
-              afi: ipv6
-              safi: unicast
+
 
           state: merged
