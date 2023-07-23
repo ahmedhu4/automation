@@ -24,4 +24,4 @@
                        default_information_originate:
                          metric: 25
                          nssa_only: true
-        state: Merged
+        state: merged
