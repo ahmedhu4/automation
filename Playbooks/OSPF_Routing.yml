@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - name: Merge provided OSPFV3 configuration
-      cisco.ios.ios_ospf:
+      cisco.ios.ios_ospfv3:
         config:
           processes:
             - process_id: 1
