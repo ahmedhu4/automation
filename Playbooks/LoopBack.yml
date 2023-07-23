@@ -27,7 +27,7 @@
         - ip address 192.168.3.1 255.255.255.0
         - ipv6 address 2001:DB8:CAFE:3::1/64
       parents: interface Loopback0
-  - name: Ipv6 To Router3
+  - name: Ipv6
     cisco.ios.ios_config:
       lines: 
         - ipv6 address 2001:DB8:CAFE:4::2/64
@@ -45,7 +45,7 @@
         - ip address 192.168.5.1 255.255.255.0
         - ipv6 address 2001:DB8:CAFE:5::1/64 
       parents: interface Loopback0
-  - name: Ipv6 To Router2
+  - name: Ipv6 
     cisco.ios.ios_config:
       lines: 
         - ipv6 address 2001:DB8:CAFE:4::1/64
