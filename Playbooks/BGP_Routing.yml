@@ -15,6 +15,10 @@
           networks:
             - prefix: 192.168.77.0
               masklen: 24
+            - prefix: 192.168.4.0
+              masklen: 24
+            - prefix: 192.168.2.0
+              masklen: 24
         operation: replace
 
 - hosts: Router4
