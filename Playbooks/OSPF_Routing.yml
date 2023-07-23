@@ -16,3 +16,17 @@
 
         state: replaced
 
+- hosts: Router3
+  gather_facts: false
+  tasks:
+    - name: Router3 test
+      cisco.ios.ios_ospf_interfaces:
+        config:
+          - name: GigabitEthernet0/0
+            address_family:
+              - afi: ipv4
+                process:
+                  id: 1
+                  area_id: 0
+
+        state: replaced
