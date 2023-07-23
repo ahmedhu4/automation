@@ -22,7 +22,6 @@
                   area_id: 0
                 network:
                   broadcast: true
-
         state: merged
 
 - hosts: Router3
@@ -46,6 +45,5 @@
                   area_id: 0
                 network:
                   broadcast: true
-
         state: merged
 
