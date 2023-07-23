@@ -9,5 +9,7 @@
         config:
           processes:
             - process_id: 1
+              areas:
+                - area_id: 1
 
         state: merged
