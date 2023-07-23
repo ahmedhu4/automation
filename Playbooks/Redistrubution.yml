@@ -1,4 +1,4 @@
-#re
+#redistributes and broadcastes network 192.168.4.0 in ipv4
 - hosts: Router2
   gather_facts: false
   tasks:
@@ -6,6 +6,7 @@
     cisco.ios.ios_config:
       lines:
         - network 192.168.4.0 0.0.0.255 area 0
+        - network 192.168.2.0 0.0.0.255 area 0
         - redistribute eigrp 6500 subnets
       parents: router ospf 1 
 
@@ -15,7 +16,6 @@
   - name: Routes from BGP into OSPF
     cisco.ios.ios_config:
       lines:
-        - network 192.168.4.0 0.0.0.255 area 0
         - redistribute bgp 65000 subnets
       parents: Router OSPF 1
   - name: Routes from OSPF into BGP
