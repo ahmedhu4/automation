@@ -9,9 +9,15 @@
         config:
           - name: GigabitEthernet0/2
             address_family:
-              - afi: 
+              - afi: ipv4
                 process:
                   id: 1
+                  area_id: 0
+                network:
+                  broadcast: true
+              - afi: ipv6
+                process:
+                  id: 2
                   area_id: 0
                 network:
                   broadcast: true
@@ -26,9 +32,15 @@
         config:
           - name: GigabitEthernet0/0
             address_family:
-              - afi: 
+              - afi: ipv4 
                 process:
                   id: 1
+                  area_id: 0
+                network:
+                  broadcast: true
+              - afi: ipv6
+                process:
+                  id: 2
                   area_id: 0
                 network:
                   broadcast: true
