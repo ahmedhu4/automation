@@ -7,5 +7,6 @@
     - name: Merge provided OSPFV3 configuration
       cisco.ios.ios_ospfv3:
         config:
-              
+          processes:
+
         state: merged
