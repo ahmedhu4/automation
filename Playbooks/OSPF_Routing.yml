@@ -30,5 +30,6 @@
                 process:
                   id: 1
                   area_id: 0
-
+                network:
+                  broadcast: true
         state: replaced
