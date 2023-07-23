@@ -15,4 +15,4 @@
                   area_id: 30
                 adjacency: true
 
-        state: merged
+      state: merged
