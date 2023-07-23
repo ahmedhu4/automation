@@ -48,8 +48,5 @@
             address_family:
               afi: ipv6
               safi: unicast
-              areas:
-                - area_id: 0.0.0.100
-                  ranges:
-                  - prefix: 2001:db2::/32
+
           state: merged
