@@ -4,12 +4,15 @@
 - hosts: Router2
   gather_facts: false
   tasks:
-    - name: Merge provided OSPFV3 configuration
-      cisco.ios.ios_ospfv3:
-        config:
-          processes:
-            - process_id: 1
-              areas:
-                - area_id: 1
+    - name: Merge provided OSPF Interfaces configuration
+      cisco.ios.ios_ospf_interfaces:
+       config:
+          - name: GigabitEthernet0/1
+            address_family:
+              - afi: ipv4
+                process:
+                  id: 10
+                  area_id: 30
+                adjacency: true
 
         state: merged
