@@ -21,5 +21,5 @@
   - name: Routes from OSPF into BGP
     cisco.ios.ios_config:
       lines:
-        - redistribute ospf 2
-      parents: router bgp 65100  
+        - redistribute ospf 1
+      parents: router bgp 65000  
