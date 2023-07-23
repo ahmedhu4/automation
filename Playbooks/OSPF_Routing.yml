@@ -28,7 +28,8 @@
                         nssa_only: true
             areas:
              - area_id: "10"
-                nssa:
+               nssa:
                   default_information_originate:
                     metric: 10
+                    nssa_only: true
         state: replaced
