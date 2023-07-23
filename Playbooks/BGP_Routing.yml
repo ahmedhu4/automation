@@ -36,7 +36,6 @@
             - afi: ipv6
           networks:
             - prefix: 2001:DB8:FEED:77::1/64
-              masklen: 32
         operation: merge
 
 
