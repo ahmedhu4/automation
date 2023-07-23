@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
   - name: Merge provided OSPFV3 configuration
-    ios_ospfv3:
+    cisco.ios.ios_ospfv3:
       config:
         processes:
           - process_id: 1
@@ -26,10 +26,4 @@
                       default_information_originate:
                         metric: 25
                         nssa_only: true
-            areas:
-             - area_id: "10"
-               nssa:
-                  default_information_originate:
-                    metric: 10
-                    nssa_only: true
         state: Merge
