@@ -23,7 +23,7 @@
                 network:
                   broadcast: true
         state: replaced
-    - name: Routes from EIGRP Into OSPF
+    - name: IPv4 Networks on Router2
       cisco.ios.ios_config:
         lines:
           - network 192.168.77.0 0.0.0.255 area 0
@@ -53,7 +53,7 @@
                 network:
                   broadcast: true
         state: merged
-    - name: Routes from EIGRP Into OSPF
+    - name: IPv4 Networks on Router3
       cisco.ios.ios_config:
         lines:
           - network 192.168.2.0 0.0.0.255 area 0
