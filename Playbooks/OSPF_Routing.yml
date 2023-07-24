@@ -28,7 +28,6 @@
         lines:
           - network 192.168.77.0 0.0.0.255 area 0
           - network 192.168.2.0 0.0.0.255 area 0
-          - network 192.168.4.0 0.0.0.255 area 0
         parents: router ospf 1
 
 - hosts: Router3
@@ -58,5 +57,4 @@
         lines:
           - network 192.168.2.0 0.0.0.255 area 0
           - network 192.168.4.0 0.0.0.255 area 0
-          - network 192.168.77.0 0.0.0.255 area 0
         parents: router ospf 1
