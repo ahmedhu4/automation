@@ -15,7 +15,7 @@
 - name: Start playbook for Redis
   import_playbook: Playbooks/Redis.yml
 
-- name: Start playbook for Redis
-  import_playbook: Playbooks/SNMP.yml
+#- name: Start playbook for SNMP
+#  import_playbook: Playbooks/SNMP.yml
 
 
