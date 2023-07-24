@@ -36,6 +36,12 @@
           bgp_as: 65100
           router_id: 192.0.0.3
           log_neighbor_changes: true
+          neighbors:
+            - neighbor: 192.168.77.2
+              remote_as: 65000
+          networks:
+            - prefix: 192.168.77.0
+              masklen: 24
         operation: replace
 
 
