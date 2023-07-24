@@ -26,8 +26,8 @@
     - name: BGP Config IPv6
       ios_bgp_address_family:
         config:
-          bgp_as: 65005
-          address_family:
+         bgp_as: 65005
+         address_family:
           - afi: ipv6
             safi: unicast
             neighbor:
@@ -48,6 +48,7 @@
             - neighbor: 192.168.77.2
               remote_as: 65000
         operation: replace
+
     - name: BGP Config IPv6
       ios_bgp_address_family:
         config:
