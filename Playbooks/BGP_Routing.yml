@@ -15,12 +15,6 @@
           networks:
             - prefix: 192.168.77.0
               masklen: 24
-          address_family:
-            - afi: ipv4
-              safi: unicast
-              redistribute:
-                - protocol: ospf
-                  id: 1
         operation: merge
 
     - name: BGP Config IPv6 Router3
