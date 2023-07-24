@@ -50,7 +50,7 @@
         operation: replace
 
     - name: BGP Config IPv6 Router4
-      ios_bgp_address_family:
+      cisco.ios.ios_bgp_address_family:
         config:
           bgp_as: 65010
           address_family:
