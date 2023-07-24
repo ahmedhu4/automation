@@ -22,7 +22,7 @@
                   area_id: 0
                 network:
                   broadcast: true
-        state: replace
+        state: replaced
     - name: Routes from EIGRP Into OSPF
       cisco.ios.ios_config:
         lines:
@@ -52,7 +52,7 @@
                   area_id: 0
                 network:
                   broadcast: true
-        state: replace
+        state: replaced
     - name: Routes from EIGRP Into OSPF
       cisco.ios.ios_config:
         lines:
