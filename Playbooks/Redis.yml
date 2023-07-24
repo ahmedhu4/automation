@@ -1,4 +1,4 @@
-#redistributes and broadcastes network 192.168.4.0 in ipv4
+#redistributes and broadcastes network 192.168.4.0 in ipv4 1
 - hosts: Router2
   gather_facts: false
   tasks:
