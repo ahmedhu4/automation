@@ -27,7 +27,6 @@
       lines:
         - eigrp router-id 192.168.1.2
         - passive-interface loopback0
-        - redistribute ospf 1
         - network 192.168.4.0 0.0.0.255
         - network 192.168.2.0 0.0.0.255
         - network 192.168.77.0 0.0.0.255
