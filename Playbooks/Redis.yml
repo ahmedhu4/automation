@@ -25,6 +25,7 @@
     cisco.ios.ios_config:
       lines:
         - redistribute bgp 65000 subnets
+        - redistribute connected
       parents: Router OSPF 1
   - name: Routes from OSPF into BGP
     cisco.ios.ios_config:
