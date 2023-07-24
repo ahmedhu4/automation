@@ -19,8 +19,8 @@
               masklen: 24
             - prefix: 192.168.2.0
               masklen: 24
-        operation: replace
-
+        operation: merge
+        
 - hosts: Router4
   gather_facts: false
   tasks:
