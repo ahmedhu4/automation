@@ -26,6 +26,8 @@
     - name: Routes from EIGRP Into OSPF
       cisco.ios.ios_config:
         lines:
+          - network 192.168.77.0 0.0.0.255 area 0
+          - network 192.168.2.0 0.0.0.255 area 0
           - network 192.168.4.0 0.0.0.255 area 0
         parents: router ospf 1
 
