@@ -13,13 +13,11 @@
             - neighbor: 192.168.77.1
               remote_as: 65100
           networks:
-            - prefix: 192.168.77.0
-              masklen: 24
             - prefix: 192.168.4.0
               masklen: 24
             - prefix: 192.168.2.0
               masklen: 24
-        operation: replace
+        operation: merge
 
 - hosts: Router4
   gather_facts: false
@@ -34,8 +32,6 @@
             - neighbor: 192.168.77.2
               remote_as: 65000
           networks:
-            - prefix: 192.168.77.0
-              masklen: 24
             - prefix: 192.168.4.0
               masklen: 24
             - prefix: 192.168.2.0
