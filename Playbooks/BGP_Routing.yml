@@ -26,13 +26,13 @@
     - name: BGP Config IPv6 Router3
       cisco.ios.ios_bgp_address_family:
         config:
-          as_number: 65005
+          as_number: 65000
           address_family:
             - afi: ipv6
               safi: unicast
               neighbor:
                - address: 2001:db8:feed:77::1
-                 remote_as: 65010
+                 remote_as: 65100
 
 
 - hosts: Router4
@@ -52,12 +52,12 @@
     - name: BGP Config IPv6 Router4
       cisco.ios.ios_bgp_address_family:
         config:
-          as_number: 65010
+          as_number: 65100
           address_family:
             - afi: ipv6
               safi: unicast
               neighbor:
                - address: 2001:db8:feed:77::2
-                 remote_as: 65005
+                 remote_as: 65000
 
 
