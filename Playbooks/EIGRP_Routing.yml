@@ -35,5 +35,4 @@
     cisco.ios.ios_config:
       lines:
         - ipv6 eigrp 65001
-        - redistribute ospf 2
       parents: Interface GigabitEthernet0/0
