@@ -12,7 +12,7 @@
       lines:
         - redistribute ospf 1
       parents: router eigrp 65000
-  - name: Routes from ipv6 eigrp into ipv6 ospf
+  - name: IPv6 redistribution
     cisco.ios.ios_config:
       lines:
         - redistribute eigrp 65001 subnets
