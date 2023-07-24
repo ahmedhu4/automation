@@ -54,10 +54,10 @@
         config:
           bgp_as: 65010
           address_family:
-          - afi: ipv6
-            safi: unicast
-            neighbor:
-            - address: 2001:db8:feed:77::2
-              remote_as: 65005
+            - afi: ipv6
+              safi: unicast
+              neighbor:
+               - address: 2001:db8:feed:77::2
+                 remote_as: 65005
 
 
