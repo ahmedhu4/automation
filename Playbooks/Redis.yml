@@ -15,7 +15,6 @@
   - name: IPv6 redistribution
     cisco.ios.ios_config:
       lines:
-        - network broadcast
         - redistribute eigrp 65001 subnets
         - router eigrp 65001
         - redistribute ospf 2
@@ -39,6 +38,5 @@
   - name: IPv6 Router 3 redistribute
     cisco.ios.ios_config:
       lines:
-        - network broadcast
         - redistribute bgp 65000 subnets
       parents: router ospf 2
