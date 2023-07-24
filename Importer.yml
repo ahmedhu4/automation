@@ -1,7 +1,7 @@
 #Imports all the playbooks so that they can ru
 
-- name: Start playbook for Loopback Interfaces
-  import_playbook: Playbooks/LoopBack_IPv6.yml
+#- name: Start playbook for Loopback Interfaces
+#  import_playbook: Playbooks/LoopBack_IPv6.yml
 
 - name: Start playbook for BGP
   import_playbook: Playbooks/BGP_Routing.yml
