@@ -3,6 +3,7 @@
   tasks:
     - name: Router SNMP configuration
       cisco.ios.ios_snmp_server:
+        config:
           communities:
             name: ahmed
             rw: true
