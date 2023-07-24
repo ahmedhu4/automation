@@ -29,6 +29,7 @@
         - network 192.168.4.0 0.0.0.255
         - network 192.168.77.0 0.0.0.255
         - ipv6 router eigrp 65001
+        - redistribute ospf 2
       parents: router eigrp 65000
   - name: Eigrp Ipv6 config
     cisco.ios.ios_config:
