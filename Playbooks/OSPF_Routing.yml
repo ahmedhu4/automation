@@ -4,7 +4,7 @@
 - hosts: Router2
   gather_facts: false
   tasks:
-    - name: Router2 test
+    - name: Router2 OSPF
       cisco.ios.ios_ospf_interfaces:
         config:
           - name: GigabitEthernet0/2
@@ -27,7 +27,7 @@
 - hosts: Router3
   gather_facts: false
   tasks:
-    - name: Router3 test
+    - name: Router3 OSPF
       cisco.ios.ios_ospf_interfaces:
         config:
           - name: GigabitEthernet0/0
