@@ -3,8 +3,8 @@
 - name: Start playbook for Loopback Interfaces
   import_playbook: Playbooks/LoopBack_IPv6.yml
 
-#- name: Start playbook for BGP
-#  import_playbook: Playbooks/BGP_Routing.yml
+- name: Start playbook for BGP
+  import_playbook: Playbooks/BGP_Routing.yml
 
 - name: Start playbook for OSPF
   import_playbook: Playbooks/OSPF_Routing.yml
