@@ -17,9 +17,5 @@
       cisco.ios.ios_lacp_interfaces:
         config:
           - name: GigabitEthernet0/0
-            port_priority: 10
           - name: GigabitEthernet0/1
-            port_priority: 20
-            fast_switchover: true
-            max_bundle: 5
         state: merged
