@@ -9,7 +9,7 @@
             acls:
              - name: std_acl
                acl_type: standard
-               ces:
+               aces:
                  - grant: permit
                    source:
                      address: any
