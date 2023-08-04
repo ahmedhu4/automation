@@ -25,9 +25,9 @@
   - name: Routes from OSPF into BGP
     cisco.ios.ios_config:
       lines:
+        - address-family ipv6
         - redistribute ospf 1
         - redistribute ospfv3 2
-        - address-family ipv6
         - network 2001:DB8:CAFE:4::/64
       parents: router bgp 65000 
   - name: IPv6 Router 3 redistribute
