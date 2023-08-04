@@ -13,6 +13,7 @@
         - crypto isakmp key cisco1 address 192.168.4.2 
         - crypto isakmp key cisco4 address 192.168.77.1
       parents:  crypto isakmp policy 10
+
   - name: Config of GRE from Router1 into Router3
     cisco.ios.ios_config:
       lines:
@@ -24,6 +25,7 @@
         - set peer 192.168.4.2  
         - set peer 192.168.77.1
       parents:  crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
+      
   - name: Config of GRE from Router1 into Router3
     cisco.ios.ios_config:
       lines:
