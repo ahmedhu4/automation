@@ -35,5 +35,5 @@
             - group: mergedGroup
               version: v3
               version_option: auth
-        state: merge
+        state: merged
 
