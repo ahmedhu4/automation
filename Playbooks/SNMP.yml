@@ -9,3 +9,4 @@
             - acl_v4: test
               name: ahmed
               rw: true
+      state: replaced
