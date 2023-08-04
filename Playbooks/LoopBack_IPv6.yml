@@ -71,12 +71,11 @@
         - ipv6 ospf network broadcast
         - ipv6 unicast-routing
       parents: Interface GigabitEthernet0/0
-  - name: ipv6 to Router3
+  - name: ipv6 to Router4
     cisco.ios.ios_config:
       lines: 
         - ipv6 address 2001:DB8:FEED:77::2/64
         - ipv6 unicast-routing
-        - ipv6 ospf network broadcast
       parents: Interface GigabitEthernet0/1
 
 - hosts: Router4
