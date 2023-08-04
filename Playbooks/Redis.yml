@@ -15,6 +15,14 @@
         - redistribute connected
       parents: router eigrp 65000
 
+  - name: IPv6 Router 3 redistribute BGP Into OSPF
+    cisco.ios.ios_config:
+      lines:
+        - redistribute connected
+      parents:
+      - router ospv3 2
+      - address-family ipv6
+
 - hosts: Router3
   gather_facts: false
   tasks:
