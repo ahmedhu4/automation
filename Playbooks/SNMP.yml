@@ -27,7 +27,10 @@
     - name: Router SNMP configuration
       cisco.ios.ios_snmp_server:
         config:
-
+          communities:
+            - acl_v4: std_acl
+              name: ahmed23
+              rw: true
           groups:
             - group: mergedGroup
               version: v3
