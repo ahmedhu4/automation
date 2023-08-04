@@ -1,3 +1,4 @@
+
 - hosts: Router1
   gather_facts: false
   tasks:
@@ -5,6 +6,6 @@
       cisco.ios.ios_snmp_server:
         config:
           communities:
-            name: ahmed
-            rw: true
+              name: ahmed
+              rw: true
         
