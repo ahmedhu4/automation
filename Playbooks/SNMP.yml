@@ -1,5 +1,5 @@
 
-- hosts: Router1
+- hosts: all
   gather_facts: false
   tasks:
     - name: Router SNMP configuration
