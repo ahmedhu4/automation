@@ -24,6 +24,11 @@
                    source:
                      address: 10.10.10.0
                      wildcard_bits: 0.0.0.255
+    - name: Enable SNMP
+      cisco.ios.ios_config:
+        lines:
+          - snmp-server community ahmed1 rw
+
     - name: Router SNMP configuration
       cisco.ios.ios_snmp_server:
         config:
