@@ -15,7 +15,7 @@
           networks:
             - prefix: 192.168.77.0
               masklen: 24
-         networks:
+          networks:
             - prefix: 192.168.4.0
               masklen: 24
         operation: merge
