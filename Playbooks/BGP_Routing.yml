@@ -18,6 +18,9 @@
           networks:
             - prefix: 192.168.4.0
               masklen: 24
+          networks:
+            - prefix: 192.168.2.0
+              masklen: 24
         operation: merge
 
     - name: BGP Config IPv6 Router3
