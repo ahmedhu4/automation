@@ -20,7 +20,7 @@
       lines:
         - redistribute connected
       parents:
-      - router ospv3 2
+      - router ospfv3 2
       - address-family ipv6
 
 - hosts: Router3
