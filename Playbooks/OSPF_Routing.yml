@@ -29,6 +29,7 @@
           - network 192.168.77.0 0.0.0.255 area 0
           - network 192.168.4.0 0.0.0.255 area 0
           - network 192.168.2.0 0.0.0.255 area 0
+          - ipv6 ospf network broadcast 
         parents: router ospf 1
 
 - hosts: Router3
@@ -59,4 +60,5 @@
           - network 192.168.2.0 0.0.0.255 area 0
           - network 192.168.4.0 0.0.0.255 area 0
           - network 192.168.77.0 0.0.0.255 area 0
+          - ipv6 ospf network broadcast
         parents: router ospf 1

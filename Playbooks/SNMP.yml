@@ -2,7 +2,7 @@
 - hosts: all
   gather_facts: false
   tasks:
-    - name: Merge provided configuration with device configuration
+    - name: Access List For SNMP
       cisco.ios.ios_acls:
         config:
           - afi: ipv4
@@ -24,6 +24,7 @@
                    source:
                      address: 10.10.10.0
                      wildcard_bits: 0.0.0.255
+
     - name: Enable SNMP
       cisco.ios.ios_config:
         lines:
@@ -40,5 +41,5 @@
             - group: mergedGroup
               version: v3
               version_option: auth
-        state: merged
+        state: replaced
 
