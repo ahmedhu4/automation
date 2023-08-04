@@ -4,7 +4,7 @@
   tasks:
     - name: Router SNMP configuration
       cisco.ios.ios_snmp_server:
-        running_config:
+        config:
           communities:
             - acl_v4:
               name: ahmed
