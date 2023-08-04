@@ -5,7 +5,4 @@
     - name: Router SNMP configuration
       cisco.ios.ios_snmp_server:
         config:
-
-              name: ahmed
-              ro: true
-              rw: true
+          communities:
