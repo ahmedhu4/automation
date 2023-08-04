@@ -1,11 +1,11 @@
 
 - hosts: Router1
   gather_facts: false
-  tasks:
+
     - name: Router SNMP configuration
       cisco.ios.ios_snmp_server:
         config:
           communities:
-              name: ahmed
+              name: ahmedASA
               rw: true
         state: replaced
