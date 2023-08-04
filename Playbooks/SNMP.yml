@@ -8,15 +8,15 @@
           - afi: ipv4
             acls:
              - name: std_acl
-                acl_type: standard
-                aces:
-                  - grant: permit
-                    source:
-                      address: any
-                  - grant: permit
-                    source:
-                      address: any
-                      wildcard_bits: 0.0.0.255
+               acl_type: standard
+               ces:
+                 - grant: permit
+                   source:
+                     address: any
+                 - grant: permit
+                   source:
+                     address: any
+                     wildcard_bits: 0.0.0.255
     - name: Router SNMP configuration
       cisco.ios.ios_snmp_server:
         config:
