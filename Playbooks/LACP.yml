@@ -1,4 +1,4 @@
-#Merging different phyiscal links
+#Merging different phyiscal links into one
 - hosts: Router3
   gather_facts: false
   tasks:
