@@ -12,7 +12,7 @@
           - name: Port-channel10
             fast_switchover: true
             max_bundle: 5
-      state: merged
+        state: merged
 
 
 - hosts: Router4
@@ -27,4 +27,4 @@
             port_priority: 20
             fast_switchover: true
             max_bundle: 5
-      state: merged
+        state: merged
