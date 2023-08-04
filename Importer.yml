@@ -10,7 +10,7 @@
   import_playbook: Playbooks/OSPF_Routing.yml
 
 - name: Start playbook for EIGRP
-  import_playbook: Playbooks/EIGRP_Routing
+  import_playbook: Playbooks/EIGRP_Routing.yml
 
 - name: Start playbook for Redis
   import_playbook: Playbooks/Redis.yml
