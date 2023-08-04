@@ -33,5 +33,6 @@
   - name: IPv6 Router 3 redistribute
     cisco.ios.ios_config:
       lines:
+        - address-family ipv6
         - redistribute bgp 65000 subnets
       parents: router ospfv3 2
