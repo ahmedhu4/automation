@@ -56,7 +56,7 @@
               network:
               - address: 2001:db8:cafe:4::/64
               redistribute:
-              - ospf: 2
+              - ospf: 
                 match:
                  external: true
 
