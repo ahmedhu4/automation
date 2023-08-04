@@ -1,4 +1,4 @@
-#OSPF Configuration 
+#OSPF Configuration with ipv6 and ipv4 
 #afi= address family indicator
 
 - hosts: Router2

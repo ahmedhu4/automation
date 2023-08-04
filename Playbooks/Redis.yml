@@ -1,4 +1,4 @@
-#redistributes and broadcastes network 192.168.4.0 in ipv4 1
+#redistributes and broadcastes network ipv4 and ipv6 between all routing protocols
 - hosts: Router2
   gather_facts: false
   tasks:
@@ -15,7 +15,6 @@
   - name: IPv6 redistribution
     cisco.ios.ios_config:
       lines:
-        - ipv6 ospf network broadcast
         - redistribute eigrp 65001 subnets
         - router eigrp 65001
         - redistribute ospf 2
@@ -39,6 +38,5 @@
   - name: IPv6 Router 3 redistribute
     cisco.ios.ios_config:
       lines:
-        - ipv6 ospf network broadcast
         - redistribute bgp 65000 subnets
       parents: router ospf 2
