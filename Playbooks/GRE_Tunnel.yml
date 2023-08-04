@@ -23,14 +23,17 @@
         - set peer 192.168.4.2  
         - set peer 192.168.77.1
       parents:  crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
-      
+
       lines:
         - crypto map MAP1
+      parents: interface GigabitEthernet0/1
+
+      lines:
         - Ip address 172.20.10.1 255.255.255.252
         - tunnel source GigabitEthernet0/1
         - tunnel destination 192.168.2.2
         - tunnel mode gre ip
-      parents:  Interface Tunnel1 
+      parents:  Interface Tunnel1
 
       lines: 
         - Ip address 172.20.20.1 255.255.255.252
@@ -38,7 +41,6 @@
         - tunnel destination 192.168.4.2
         - tunnel mode gre ip
       parents: Interface Tunnel2
-
 
       lines:
         - Ip address 172.20.30.1 255.255.255.252
@@ -61,26 +63,33 @@
         - group 1
         - lifetime 82000
         - crypto isakmp key cisco2 address 192.168.2.1
-        - crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
+      lines:
         - crypto map MAP1 100 ipsec-isakmp
         - match address std_acl
         - set pfs group1
         - set transform-set VPN12
         - set security-association lifetime seconds 86000
         - set peer 192.168.2.1
-        - interface GigabitEthernet0/1
+      parents: crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
+
+      lines:
         - crypto map MAP1
+      parents: interface GigabitEthernet0/0
+
+      lines:
         - Interface Tunnel1 
         - Ip address 172.20.10.2 255.255.255.252
         - tunnel source GigabitEthernet0/0
         - tunnel destination 192.168.2.1
         - tunnel mode gre ip
+      parents: interface Tunnel1 
 
-      
 - hosts: Router3
   gather_facts: false
   tasks:
   - name: Config of GRE from Router3 into Router1
+    cisco.ios.ios_config:
+      lines:
     cisco.ios.ios_config:
       lines:
         - crypto isakmp policy 10
@@ -89,20 +98,25 @@
         - group 1
         - lifetime 82000
         - crypto isakmp key cisco2 address 192.168.2.1
-        - crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
+      lines:
         - crypto map MAP1 100 ipsec-isakmp
         - match address std_acl
         - set pfs group1
         - set transform-set VPN12
         - set security-association lifetime seconds 86000
         - set peer 192.168.2.1
-        - interface GigabitEthernet0/0
+      parents: crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
+
+      lines:
         - crypto map MAP1
-        - Interface Tunnel1 
-        - Ip address 172.20.20.2 255.255.255.252
+      parents: interface GigabitEthernet0/0
+
+      lines:
+        - Ip address 172.20.10.2 255.255.255.252
         - tunnel source GigabitEthernet0/0
         - tunnel destination 192.168.2.1
         - tunnel mode gre ip
+      parents: interface Tunnel2
 
 
 - hosts: Router4
@@ -117,17 +131,22 @@
         - group 1
         - lifetime 82000
         - crypto isakmp key cisco2 address 192.168.2.1
-        - crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
+      lines:
         - crypto map MAP1 100 ipsec-isakmp
         - match address std_acl
         - set pfs group1
         - set transform-set VPN12
         - set security-association lifetime seconds 86000
         - set peer 192.168.2.1
-        - interface GigabitEthernet0/0
+      parents: crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
+
+      lines:
         - crypto map MAP1
-        - Interface Tunnel1 
-        - Ip address 172.20.30.2 255.255.255.252
+      parents: interface GigabitEthernet0/0
+
+      lines: 
+        - Ip address 172.20.10.2 255.255.255.252
         - tunnel source GigabitEthernet0/0
         - tunnel destination 192.168.2.1
         - tunnel mode gre ip
+      parents: interface Tunnel3
