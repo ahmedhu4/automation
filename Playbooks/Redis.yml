@@ -17,7 +17,6 @@
       lines:
         - redistribute eigrp 65001 subnets
         - router eigrp 65001
-        - redistribute ospf 2
       parents: router ospfv3 2
 
 - hosts: Router3
@@ -33,7 +32,7 @@
     cisco.ios.ios_config:
       lines:
         - redistribute ospf 1
-        - redistribute ospf 2
+        - redistribute ospfv3 2
         - address-family ipv6
         - network 2001:DB8:CAFE:4::/64
       parents: router bgp 65000 
