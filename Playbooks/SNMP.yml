@@ -8,4 +8,9 @@
           communities:
               name: ahmedASA
               rw: true
+          groups:
+            - group: mergedGroup
+              version: v3
+              version_option: auth
         state: replaced
+
