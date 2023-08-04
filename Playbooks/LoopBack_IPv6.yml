@@ -9,6 +9,7 @@
         - ip address 192.168.6.1 255.255.255.0
         - ipv6 address 2001:DB8:CAFE:6::/64
       parents: interface Loopback0
+
   - name: Int Loopback1
     cisco.ios.ios_config:
       lines:
@@ -16,12 +17,14 @@
         - ip address 192.168.1.1 255.255.255.0
         - ipv6 address 2001:DB8:CAFE:1::1/64
       parents: interface Loopback1
+
   - name: Ipv6 to Router2
     cisco.ios.ios_config:
       lines: 
         - ipv6 address 2001:DB8:CAFE:2::2/64
         - ipv6 unicast-routing
       parents: Interface GigabitEthernet0/1
+
   - name: Ipv6 to devnet machine
     cisco.ios.ios_config:
       lines: 
@@ -38,6 +41,7 @@
         - ip address 192.168.3.1 255.255.255.0
         - ipv6 address 2001:DB8:CAFE:3::1/64
       parents: interface Loopback0
+
   - name: Ipv6 to Router3
     cisco.ios.ios_config:
       lines: 
@@ -45,6 +49,7 @@
         - ipv6 ospf network broadcast
         - ipv6 unicast-routing
       parents: Interface GigabitEthernet0/2
+
   - name: Ipv6 to Router1
     cisco.ios.ios_config:
       lines: 
@@ -63,6 +68,7 @@
         - ip address 192.168.5.1 255.255.255.0
         - ipv6 address 2001:DB8:CAFE:5::1/64 
       parents: interface Loopback0
+  
   - name: Ipv6 to Router2
     cisco.ios.ios_config:
       lines: 
@@ -71,6 +77,7 @@
         - ipv6 ospf network broadcast
         - ipv6 unicast-routing
       parents: Interface GigabitEthernet0/0
+
   - name: ipv6 to Router4
     cisco.ios.ios_config:
       lines: 
@@ -88,6 +95,7 @@
         - ip address 192.168.99.1 255.255.255.0
         - ipv6 address 2001:DB8:99:1::1/64 
       parents: interface Loopback0
+
   - name: Ipv6 to Router3
     cisco.ios.ios_config:
       lines: 
