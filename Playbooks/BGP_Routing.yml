@@ -55,8 +55,7 @@
                  remote_as: 65000
               network:
               - address: 2001:db8:cafe:4::/64
-              redistribute:
-              - ospf: 
+              redistribute: ospf 
                 match:
                  external: true
 
