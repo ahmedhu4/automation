@@ -34,10 +34,11 @@
                - address: 2001:db8:feed:77::1
                  remote_as: 65100
               network:
-              - address: 2001:db8:cafe:2::/64
-              network:
               - address: 2001:db8:cafe:4::/64
-
+          address_family:
+            - afi: ipv6
+              network:
+              - address: 2001:db8:cafe:2::/64
 - hosts: Router4
   gather_facts: false
   tasks:
