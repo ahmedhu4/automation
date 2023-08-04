@@ -29,6 +29,8 @@
                  remote_as: 65100
               network:
               - address: 2001:db8:cafe:4::/64
+              network:
+              - address: 2001:db8:cafe:2::/64
 
 
 - hosts: Router4
