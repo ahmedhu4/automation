@@ -6,12 +6,7 @@
       cisco.ios.ios_lacp_interfaces:
         config:
           - name: GigabitEthernet0/1
-
           - name: GigabitEthernet0/2
-
-          - name: Port-channel10
-            fast_switchover: true
-            max_bundle: 5
         state: merged
 
 
