@@ -7,6 +7,7 @@
       lines:
         - redistribute eigrp 65000 subnets
       parents: router ospf 1
+      
   - name: Routes from OSPF Into EIGRP
     cisco.ios.ios_config:
       lines:
@@ -22,13 +23,12 @@
         - redistribute bgp 65000 subnets
         - redistribute connected
       parents: Router OSPF 1
+
   - name: Routes from OSPF into BGP
     cisco.ios.ios_config:
       lines:
         - redistribute ospf 1
       parents: router bgp 65000 
-
-
 
   - name: IPv6 Router 3 redistribute OSPF Into BGP
     cisco.ios.ios_config:

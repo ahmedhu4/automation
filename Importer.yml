@@ -1,8 +1,7 @@
 #Imports all the playbooks so that they can run
 
-- name: Start playbook for Redis
-  import_playbook: Playbooks/Redis.yml
-
+- name: Start playbook for BGP
+  import_playbook: Playbooks/BGP_Routing.yml
 
 
 
