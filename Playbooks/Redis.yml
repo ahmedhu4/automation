@@ -29,7 +29,6 @@
         - redistribute ospf 1
         - address-family ipv6
         - redistribute ospfv3 2
-        - network 2001:DB8:CAFE:4::/64
 
   - name: IPv6 Router 3 redistribute
     cisco.ios.ios_config:
