@@ -12,12 +12,6 @@
       lines:
         - redistribute ospf 1
       parents: router eigrp 65000
-  - name: IPv6 redistribution
-    cisco.ios.ios_config:
-      lines:
-        - redistribute eigrp 65001 subnets
-        - router eigrp 65001
-      parents: router ospfv3 2
 
 - hosts: Router3
   gather_facts: false
