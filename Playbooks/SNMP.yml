@@ -1,7 +1,22 @@
 
-- hosts: all
+- hosts: Router1
   gather_facts: false
   tasks:
+    - name: Merge provided configuration with device configuration
+      cisco.ios.ios_acls:
+        config:
+          - afi: ipv4
+            acls:
+             - name: std_acl
+                acl_type: standard
+                aces:
+                  - grant: permit
+                    source:
+                      address: any
+                  - grant: permit
+                    source:
+                      address: any
+                      wildcard_bits: 0.0.0.255
     - name: Router SNMP configuration
       cisco.ios.ios_snmp_server:
         config:
