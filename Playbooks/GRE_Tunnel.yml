@@ -1,99 +1,4 @@
 #Implemnting GRE Tunnel
-- hosts: Router1
-  gather_facts: false
-  tasks:
-  - name: Config of GRE from Router1 into Router3
-    cisco.ios.ios_config:
-      lines:
-        - encryption aes 256
-        - authentication pre-share
-        - group 1
-        - lifetime 82000
-        - crypto isakmp key cisco2 address 192.168.2.2
-        - crypto isakmp key cisco1 address 192.168.4.2 
-        - crypto isakmp key cisco4 address 192.168.77.1
-      parents:  crypto isakmp policy 10
-
-  - name: Config of GRE from Router1 into Router3
-    cisco.ios.ios_config:
-      lines:
-        - crypto map MAP1 100 ipsec-isakmp
-        - set pfs group1
-        - set transform-set VPN12
-        - set security-association lifetime seconds 86000
-        - set peer 192.168.2.2
-        - set peer 192.168.4.2  
-        - set peer 192.168.77.1
-      parents:  crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
-      
-  - name: Config of GRE from Router1 into Router3
-    cisco.ios.ios_config:
-      lines:
-        - crypto map MAP1
-      parents: interface GigabitEthernet0/1
-  - name: Config of GRE from Router1 into Router3
-    cisco.ios.ios_config:
-      lines:
-        - Ip address 172.20.10.1 255.255.255.252
-        - tunnel source GigabitEthernet0/1
-        - tunnel destination 192.168.2.2
-        - tunnel mode gre ip
-      parents:  Interface Tunnel1
-
-  - name: Config of GRE from Router1 into Router3
-    cisco.ios.ios_config:
-      lines: 
-        - Ip address 172.20.20.1 255.255.255.252
-        - tunnel source GigabitEthernet0/1
-        - tunnel destination 192.168.4.2
-        - tunnel mode gre ip
-      parents: Interface Tunnel2
-  - name: Config of GRE from Router1 into Router3
-    cisco.ios.ios_config:
-      lines:
-        - Ip address 172.20.30.1 255.255.255.252
-        - tunnel source GigabitEthernet0/1
-        - tunnel destination 192.168.77.1
-        - tunnel mode gre ip
-      parents: Interface Tunnel3
-
-
-
-- hosts: Router2
-  gather_facts: false
-  tasks:
-  - name: Config of GRE from Router2 into Router1
-    cisco.ios.ios_config:
-      lines:
-        - encryption aes 256
-        - authentication pre-share
-        - group 1
-        - lifetime 82000
-        - crypto isakmp key cisco2 address 192.168.2.1
-      parents:  crypto isakmp policy 10
-  - name: Config of GRE from Router2 into Router1
-    cisco.ios.ios_config:
-      lines:
-        - crypto map MAP1 100 ipsec-isakmp
-        - set pfs group1
-        - set transform-set VPN12
-        - set security-association lifetime seconds 86000
-        - set peer 192.168.2.1
-      parents: crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
-  - name: Config of GRE from Router2 into Router1
-    cisco.ios.ios_config:
-      lines:
-        - crypto map MAP1
-      parents: interface GigabitEthernet0/0
-  - name: Config of GRE from Router2 into Router1
-    cisco.ios.ios_config:
-      lines:
-        - Ip address 172.20.10.2 255.255.255.252
-        - tunnel source GigabitEthernet0/0
-        - tunnel destination 192.168.2.1
-        - tunnel mode gre ip
-      parents: interface Tunnel1 
-
 - hosts: Router3
   gather_facts: false
   tasks:
@@ -104,7 +9,7 @@
         - authentication pre-share
         - group 1
         - lifetime 82000
-        - crypto isakmp key cisco1 address 192.168.2.1
+        - crypto isakmp key cisco1 address 192.168.77.1
       parents:  crypto isakmp policy 10
   - name: Config of GRE from Router3 into Router1
     cisco.ios.ios_config:
@@ -113,19 +18,19 @@
         - set pfs group1
         - set transform-set VPN12
         - set security-association lifetime seconds 86000
-        - set peer 192.168.2.1
+        - set peer 192.168.77.1
       parents: crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
   - name: Config of GRE from Router3 into Router1
     cisco.ios.ios_config:
       lines:
         - crypto map MAP1
-      parents: interface GigabitEthernet0/0
+      parents: interface GigabitEthernet0/1
   - name: Config of GRE from Router3 into Router1
     cisco.ios.ios_config:
       lines:
-        - Ip address 172.20.10.2 255.255.255.252
-        - tunnel source GigabitEthernet0/0
-        - tunnel destination 192.168.2.1
+        - Ip address 172.20.10.1 255.255.255.252
+        - tunnel source GigabitEthernet0/1
+        - tunnel destination 192.168.77.1
         - tunnel mode gre ip
       parents: interface Tunnel2
 
@@ -140,7 +45,7 @@
         - authentication pre-share
         - group 1
         - lifetime 82000
-        - crypto isakmp key cisco4 address 192.168.2.1
+        - crypto isakmp key cisco1 address 192.168.77.2
       parents:  crypto isakmp policy 10
   - name: Config of GRE from Router4 into Router1
     cisco.ios.ios_config:
@@ -149,7 +54,7 @@
         - set pfs group1
         - set transform-set VPN12
         - set security-association lifetime seconds 86000
-        - set peer 192.168.2.1
+        - set peer 192.168.77.2
       parents: crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
   - name: Config of GRE from Router4 into Router1
     cisco.ios.ios_config:
@@ -161,6 +66,6 @@
       lines: 
         - Ip address 172.20.10.2 255.255.255.252
         - tunnel source GigabitEthernet0/0
-        - tunnel destination 192.168.2.1
+        - tunnel destination 192.168.77.2
         - tunnel mode gre ip
       parents: interface Tunnel3
