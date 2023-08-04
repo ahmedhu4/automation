@@ -7,4 +7,5 @@
         config:
           communities:
               name: ahmed
+              ro: true
               rw: true
