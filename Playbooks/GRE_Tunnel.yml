@@ -5,7 +5,6 @@
   - name: Config of GRE from Router1 into Router3
     cisco.ios.ios_config:
       lines:
-        - crypto isakmp policy 10
         - encryption aes 256
         - authentication pre-share
         - group 1
@@ -13,6 +12,7 @@
         - crypto isakmp key cisco2 address 192.168.2.2
         - crypto isakmp key cisco1 address 192.168.4.2 
         - crypto isakmp key cisco4 address 192.168.77.1
+      parents:  crypto isakmp policy 10
       lines:
         - crypto map MAP1 100 ipsec-isakmp
         - match address std_acl
@@ -57,12 +57,12 @@
   - name: Config of GRE from Router2 into Router1
     cisco.ios.ios_config:
       lines:
-        - crypto isakmp policy 10
         - encryption aes 256
         - authentication pre-share
         - group 1
         - lifetime 82000
         - crypto isakmp key cisco2 address 192.168.2.1
+      parents:  crypto isakmp policy 10
       lines:
         - crypto map MAP1 100 ipsec-isakmp
         - match address std_acl
@@ -91,12 +91,12 @@
       lines:
     cisco.ios.ios_config:
       lines:
-        - crypto isakmp policy 10
         - encryption aes 256
         - authentication pre-share
         - group 1
         - lifetime 82000
         - crypto isakmp key cisco1 address 192.168.2.1
+      parents:  crypto isakmp policy 10
       lines:
         - crypto map MAP1 100 ipsec-isakmp
         - match address std_acl
@@ -124,12 +124,12 @@
   - name: Config of GRE from Router4 into Router1
     cisco.ios.ios_config:
       lines:
-        - crypto isakmp policy 10
         - encryption aes 256
         - authentication pre-share
         - group 1
         - lifetime 82000
         - crypto isakmp key cisco4 address 192.168.2.1
+      parents:  crypto isakmp policy 10
       lines:
         - crypto map MAP1 100 ipsec-isakmp
         - match address std_acl
