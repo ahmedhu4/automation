@@ -1,8 +1,8 @@
 #Merging different phyiscal links
-- hosts: Router2
+- hosts: Router3
   gather_facts: false
   tasks:
-    - name: Merge provided configuration with device configuration
+    - name: LACP config on R3
       cisco.ios.ios_lacp_interfaces:
         config:
           - name: GigabitEthernet0/1
