@@ -12,10 +12,17 @@
                aces:
                  - grant: permit
                    source:
-                     address: any
+                     address: 192.168.77.0
                  - grant: permit
                    source:
-                     address: any
+                     address: 192.168.77.0
+                     wildcard_bits: 0.0.0.255
+                 - grant: permit
+                   source:
+                     address: 10.10.10.0
+                 - grant: permit
+                   source:
+                     address: 10.10.10.0
                      wildcard_bits: 0.0.0.255
     - name: Router SNMP configuration
       cisco.ios.ios_snmp_server:
