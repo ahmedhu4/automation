@@ -2,12 +2,6 @@
 - hosts: Router4
   gather_facts: false
   tasks:
-  - name: ACLs
-    cisco.ios.ios_config:
-      lines:
-        - permit ip any any
-      parents: ip access-list extended VPN-ACL3
-
   - name: Config of GRE from Router4 into Router1
     cisco.ios.ios_config:
       lines:
@@ -43,16 +37,10 @@
         - tunnel destination 192.168.77.2
         - tunnel mode gre ip
       parents: interface Tunnel3
-      
+
 - hosts: Router3
   gather_facts: false
   tasks:
-  - name: ACLs
-    cisco.ios.ios_config:
-      lines:
-        - permit ip any any
-      parents: ip access-list extended VPN-ACL3
-
   - name: Config of GRE from Router3 into Router1
     cisco.ios.ios_config:
       lines:
