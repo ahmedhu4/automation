@@ -2,8 +2,8 @@
 - hosts: Router3
   gather_facts: false
   tasks:
-  - name: ACL2
-    cisco.ios.ios_config
+  - name: ACLs
+    cisco.ios.ios_config:
       lines:
         - permit ip any any
       parents: ip access-list extended VPN-ACL3
@@ -47,8 +47,8 @@
 - hosts: Router4
   gather_facts: false
   tasks:
-  - name: ACL
-    cisco.ios.ios_config
+  - name: ACLs
+    cisco.ios.ios_config:
       lines:
         - permit ip any any
       parents: ip access-list extended VPN-ACL3
@@ -67,6 +67,7 @@
     cisco.ios.ios_config:
       lines:
         - crypto map MAP1 100 ipsec-isakmp
+        - match address VPN-ACL3
         - set pfs group1
         - set transform-set VPN12
         - set security-association lifetime seconds 86000
