@@ -5,11 +5,11 @@
   - name: Config of GRE from Router4 into Router1
     cisco.ios.ios_config:
       lines:
-        - encryption aes 256
+        - encr aes 256
         - authentication pre-share
         - group 1
         - lifetime 82000
-        - crypto isakmp key cisco1 address 192.168.4.2
+        - crypto isakmp key cisco1 address 192.168.77.2
       parents:  crypto isakmp policy 10
   - name: Config of GRE from Router4 into Router1
 
@@ -20,7 +20,7 @@
         - set pfs group1
         - set transform-set VPN12
         - set security-association lifetime seconds 86000
-        - set peer 192.168.4.2
+        - set peer 192.168.77.2
       parents: crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
 
   - name: Config of GRE from Router4 into Router1
@@ -34,7 +34,7 @@
       lines: 
         - Ip address 172.20.10.2 255.255.255.252
         - tunnel source GigabitEthernet0/0
-        - tunnel destination 192.168.4.2
+        - tunnel destination 192.168.77.2
         - tunnel mode gre ip
       parents: interface Tunnel3
 
@@ -44,7 +44,7 @@
   - name: Config of GRE from Router3 into Router1
     cisco.ios.ios_config:
       lines:
-        - encryption aes 256
+        - encr aes 256
         - authentication pre-share
         - group 1
         - lifetime 82000
