@@ -38,7 +38,7 @@
               name: ahmed23
               rw: true
           groups:
-            - group: mergedGroup
+            - group: SkoolGroup
               version: v3
               version_option: auth
         state: replaced
