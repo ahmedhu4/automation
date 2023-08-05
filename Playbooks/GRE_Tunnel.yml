@@ -2,12 +2,11 @@
 - hosts: Router4
   gather_facts: false
   tasks:
-    - name: Config of GRE from Router4 into Router1
+  - name: Config of GRE from Router4 into Router1
     cisco.ios.ios_config:
       lines:
         - permit gre host 102.168.77.1 host 192.172.77.2
       parents: ip access-list extended VPN-ACL3
-  - name: Config of GRE from Router4 into Router1
 
   - name: Config of GRE from Router4 into Router1
     cisco.ios.ios_config:
@@ -18,8 +17,8 @@
         - lifetime 82000
         - crypto isakmp key cisco1 address 192.168.77.2
       parents:  crypto isakmp policy 10
-  - name: Config of GRE from Router4 into Router1
 
+  - name: Config of GRE from Router4 into Router1
     cisco.ios.ios_config:
       lines:
         - match address VPN-ACL3
@@ -54,7 +53,7 @@
       lines:
         - permit gre host 102.168.77.2 host 192.172.77.1
       parents: ip access-list extended VPN-ACL3
-      
+
   - name: Config of GRE from Router3 into Router1
     cisco.ios.ios_config:
       lines:
