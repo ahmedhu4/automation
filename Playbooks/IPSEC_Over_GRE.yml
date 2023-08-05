@@ -2,13 +2,13 @@
 - hosts: Router4
   gather_facts: false
   tasks:
-  - name: Config of GRE ACL Router 4
+  - name: Config of IPsec Over GRE ACL Router 4
     cisco.ios.ios_config:
       lines:
         - permit gre host 102.168.77.1 host 192.172.77.2
       parents: ip access-list extended VPN-ACL3
 
-  - name: Config of GRE Policy
+  - name: Config of isakmp Policy
     cisco.ios.ios_config:
       lines:
         - encr aes 256
@@ -18,7 +18,7 @@
         - crypto isakmp key cisco1 address 192.168.77.2
       parents:  crypto isakmp policy 10
 
-  - name: Config of GRE MAP
+  - name: Config of IPsec MAP
     cisco.ios.ios_config:
       lines:
         - match address VPN-ACL3
@@ -30,7 +30,7 @@
       - crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
       - crypto map MAP1 100 ipsec-isakmp
 
-  - name: Config of GRE MAP into Interface
+  - name: Config of IPsec MAP into Interface
     cisco.ios.ios_config:
       lines:
         - crypto map MAP1
@@ -48,13 +48,13 @@
 - hosts: Router3
   gather_facts: false
   tasks:
-  - name: Config of GRE ACL Router 3
+  - name: Config of IPsec Over GRE ACL Router 3
     cisco.ios.ios_config:
       lines:
         - permit gre host 102.168.77.2 host 192.172.77.1
       parents: ip access-list extended VPN-ACL3
 
-  - name: Config of GRE Policy
+  - name: Config of isakmp Policy
     cisco.ios.ios_config:
       lines:
         - encr aes 256
@@ -64,7 +64,7 @@
         - crypto isakmp key cisco1 address 192.168.77.1
       parents:  crypto isakmp policy 10
 
-  - name: Config of GRE MAP
+  - name: Config of IPsec MAP
     cisco.ios.ios_config:
       lines:
         - match address VPN-ACL3
@@ -76,7 +76,7 @@
       - crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
       - crypto map MAP1 100 ipsec-isakmp
 
-  - name: Config of GRE MAP into Interface
+  - name: Config of IPsec MAP into Interface
     cisco.ios.ios_config:
       lines:
         - crypto map MAP1
