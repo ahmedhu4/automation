@@ -20,5 +20,5 @@
 - name: Start playbook for SNMP
   import_playbook: Playbooks/SNMP.yml
 
-- name: Start playbook for GRE Tunnel
-  import_playbook: Playbooks/GRE_Tunnel.yml
+- name: Start playbook for IPSEC Over GRE
+  import_playbook: Playbooks/IPSEC_Over_GRE.yml
