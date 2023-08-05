@@ -2,6 +2,13 @@
 - hosts: Router4
   gather_facts: false
   tasks:
+    - name: Config of GRE from Router4 into Router1
+    cisco.ios.ios_config:
+      lines:
+        - permit gre host 102.168.77.1 host 192.172.77.2
+      parents: ip access-list extended VPN-ACL3
+  - name: Config of GRE from Router4 into Router1
+
   - name: Config of GRE from Router4 into Router1
     cisco.ios.ios_config:
       lines:
@@ -15,13 +22,14 @@
 
     cisco.ios.ios_config:
       lines:
-        - crypto map MAP1 100 ipsec-isakmp
         - match address VPN-ACL3
         - set pfs group1
         - set transform-set VPN12
         - set security-association lifetime seconds 86000
         - set peer 192.168.77.2
-      parents: crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
+      parents: 
+      - crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
+      - crypto map MAP1 100 ipsec-isakmp
 
   - name: Config of GRE from Router4 into Router1
     cisco.ios.ios_config:
@@ -41,6 +49,12 @@
 - hosts: Router3
   gather_facts: false
   tasks:
+  - name: Config of GRE from Router4 into Router1
+    cisco.ios.ios_config:
+      lines:
+        - permit gre host 102.168.77.2 host 192.172.77.1
+      parents: ip access-list extended VPN-ACL3
+      
   - name: Config of GRE from Router3 into Router1
     cisco.ios.ios_config:
       lines:
@@ -54,13 +68,14 @@
   - name: Config of GRE from Router3 into Router1
     cisco.ios.ios_config:
       lines:
-        - crypto map MAP1 100 ipsec-isakmp
         - match address VPN-ACL3
         - set pfs group1
         - set transform-set VPN12
         - set security-association lifetime seconds 86000
         - set peer 192.168.77.1
-      parents: crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
+      parents: 
+      - crypto ipsec transform-set VPN12 esp-aes 256 esp-sha-hmac
+      - crypto map MAP1 100 ipsec-isakmp
 
   - name: Config of GRE from Router3 into Router1
     cisco.ios.ios_config:
