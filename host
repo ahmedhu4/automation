@@ -9,15 +9,15 @@ routers:
     Router4:
       ansible_host: 192.168.77.1
 
-
+      
   vars:
     ansible_network_os: ios
-    ansible_user: admin
-    ansible_password:  automation
+    ansible_user: "{{username}}"
+    ansible_ssh_pass: "{{password}}"
     ansible_connection:  network_cli
+    ansible_become: yes
     ansible_become_method: enable
-    ansible_become_user: admin
-    ansible_become_password: automation
+    ansible_become_password: "{{password}}"
 
 
 #dsafasdffasdfasdf
