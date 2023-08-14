@@ -1,0 +1,104 @@
+
+2023-08-14 15:23:12,178: %UNICON-INFO: +++ Router4 logfile Routing_Protocols_IPv6/connection_Router4.txt +++
+
+2023-08-14 15:23:12,178: %UNICON-INFO: +++ Unicon plugin ios (unicon.plugins.ios) +++
+
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+
+2023-08-14 15:23:12,992: %UNICON-INFO: +++ connection to spawn: ssh -l admin 192.168.77.1, id: 140010911913344 +++
+
+2023-08-14 15:23:12,992: %UNICON-INFO: connection to Router4
+Password: 
+
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+Router4>
+
+2023-08-14 15:23:13,123: %UNICON-INFO: +++ initializing handle +++
+enable
+Password: 
+Router4#
+
+2023-08-14 15:23:13,379: %UNICON-INFO: +++ Router4 with via 'cli': executing command 'term length 0' +++
+term length 0
+Router4#
+
+2023-08-14 15:23:13,642: %UNICON-INFO: +++ Router4 with via 'cli': executing command 'term width 0' +++
+term width 0
+Router4#
+
+2023-08-14 15:23:13,892: %UNICON-INFO: +++ Router4 with via 'cli': executing command 'show version' +++
+show version
+Cisco IOS Software, IOSv Software (VIOS-ADVENTERPRISEK9-M), Version 15.8(3)M2, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2019 by Cisco Systems, Inc.
+Compiled Thu 28-Mar-19 14:06 by prod_rel_team
+
+
+ROM: Bootstrap program is IOSv
+
+Router4 uptime is 1 hour, 45 minutes
+System returned to ROM by reload
+System image file is "flash0:/vios-adventerprisek9-m"
+Last reload reason: Unknown reason
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Cisco IOSv (revision 1.0) with  with 984321K/62464K bytes of memory.
+Processor board ID 9L3AEGGQ2S6NWQDABZEJJ
+4 Gigabit Ethernet interfaces
+DRAM configuration is 72 bits wide with parity disabled.
+256K bytes of non-volatile configuration memory.
+2097152K bytes of ATA System CompactFlash 0 (Read/Write)
+0K bytes of ATA CompactFlash 1 (Read/Write)
+0K bytes of ATA CompactFlash 2 (Read/Write)
+0K bytes of ATA CompactFlash 3 (Read/Write)
+
+
+
+Configuration register is 0x0
+
+Router4#
+
+2023-08-14 15:23:14,312: %UNICON-INFO: +++ Router4 with via 'cli': executing command 'show ipv6 protocols' +++
+show ipv6 protocols
+IPv6 Routing Protocol is "connected"
+IPv6 Routing Protocol is "application"
+IPv6 Routing Protocol is "ND"
+IPv6 Routing Protocol is "bgp 65100"
+  IGP synchronization is disabled
+  Redistribution:
+    None
+  Neighbor(s):
+    Address                    FiltIn FiltOut Weight RoutemapIn RoutemapOut
+    2001:DB8:FEED:77::2                                                      
+  Distance:
+Router4#

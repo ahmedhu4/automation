@@ -1,0 +1,29 @@
+{
+  "_exclude": [
+    "last_update",
+    " network",
+    "next_update"
+  ],
+  "protocols": {
+    "bgp": {
+      "instance": {
+        "default": {
+          "bgp_id": 65100,
+          "vrf": {
+            "default": {
+              "address_family": {
+                "ipv6": {
+                  "igp_sync": false,
+                  "neighbors": {
+                    "2001:DB8:FEED:77::2": {}
+                  },
+                  "redistribute": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

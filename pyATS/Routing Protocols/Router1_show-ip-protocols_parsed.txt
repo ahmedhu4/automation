@@ -1,0 +1,26 @@
+{
+  "_exclude": [
+    "last_update",
+    " network",
+    "next_update"
+  ],
+  "protocols": {
+    "application": {
+      "flushed": 0,
+      "holddown": 0,
+      "incoming_filter_list": "not set",
+      "invalid": 0,
+      "maximum_path": 32,
+      "outgoing_filter_list": "not set",
+      "preference": {
+        "single_value": {
+          "all": 4
+        }
+      },
+      "update_frequency": 0
+    },
+    "eigrp": {
+      "protocol_under_dev": true
+    }
+  }
+}

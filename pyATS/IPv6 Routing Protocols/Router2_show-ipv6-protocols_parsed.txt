@@ -1,0 +1,77 @@
+{
+  "_exclude": [
+    "last_update",
+    " network",
+    "next_update"
+  ],
+  "protocols": {
+    "eigrp": {
+      "vrf": {
+        "default": {
+          "address_family": {
+            "ipv6": {
+              "eigrp_instance": {
+                "65001": {
+                  "configured_interfaces": [
+                    "GigabitEthernet0/0"
+                  ],
+                  "eigrp_id": 65001,
+                  "metric_weight": {
+                    "k1": 1,
+                    "k2": 0,
+                    "k3": 1,
+                    "k4": 0,
+                    "k5": 0
+                  },
+                  "named_mode": false,
+                  "redistribute": {},
+                  "router_id": "1.1.1.1",
+                  "topology": {
+                    "0": {
+                      "active_timer": 3,
+                      "distance_external": 170,
+                      "distance_internal": 90,
+                      "max_hopcount": 100,
+                      "max_path": 16,
+                      "max_variance": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "ospf": {
+      "vrf": {
+        "default": {
+          "address_family": {
+            "ipv6": {
+              "instance": {
+                "2": {
+                  "areas": {
+                    "0": {
+                      "configured_interfaces": [
+                        "GigabitEthernet0/2"
+                      ]
+                    }
+                  },
+                  "redistribute": {
+                    "connected": {
+                      "include_connected": false
+                    }
+                  },
+                  "router_id": "192.168.3.1",
+                  "total_normal_area": 1,
+                  "total_nssa_area": 0,
+                  "total_stub_area": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

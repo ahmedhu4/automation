@@ -1,0 +1,53 @@
+devices:
+  Router1:
+    connections:
+      cli:
+        ip: 192.168.2.1
+        protocol: ssh
+    credentials: 
+      default: 
+        password: automation
+        username: admin
+      enable: 
+        password: automation
+    os: ios
+    type: ios
+  Router2:
+    connections:
+      cli:
+        ip: 192.168.2.2
+        protocol: ssh
+    credentials:
+      default:
+        password: automation
+        username: admin
+      enable:
+        password: automation
+    os: ios
+    type: ios
+  Router3:
+    connections:
+      cli:
+        ip: 192.168.77.2
+        protocol: ssh
+    credentials:
+      default:
+        password: automation
+        username: admin
+      enable:
+        password: automation
+    os: ios
+    type: ios
+  Router4:
+    connections:
+      cli:
+        ip: 192.168.77.1
+        protocol: ssh
+    credentials:
+      default:
+        password: automation
+        username: admin
+      enable:
+        password: automation
+    os: ios
+    type: ios

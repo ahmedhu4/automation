@@ -1,0 +1,70 @@
++++ Router3 with via 'cli': executing command 'show ip protocols' +++
+show ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "application"
+  Sending updates every 0 seconds
+  Invalid after 0 seconds, hold down 0, flushed after 0
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Maximum path: 32
+  Routing for Networks:
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 4)
+
+Routing Protocol is "bgp 65000"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  IGP synchronization is disabled
+  Automatic route summarization is disabled
+  Redistributing: ospf 1 (internal)
+                  
+  Redistributing: ospfv3 2
+  Neighbor(s):
+    Address          FiltIn FiltOut DistIn DistOut Weight RouteMap
+    192.168.77.1                                         
+  Maximum path: 1
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: external 20 internal 200 local 200
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 192.168.5.1
+  It is an autonomous system boundary router
+ Redistributing External Routes from,
+    connected, includes subnets in redistribution
+    bgp 65000, includes subnets in redistribution
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    192.168.2.0 0.0.0.255 area 0
+    192.168.4.0 0.0.0.255 area 0
+    192.168.77.0 0.0.0.255 area 0
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    192.168.3.1          110      00:40:08
+  Distance: (default is 110)
+
+Routing Protocol is "ospfv3 2"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 192.168.5.1
+  Number of areas: 0 normal, 0 stub, 0 nssa
+  Maximum path: 4
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 110)
+
+Router3#
++++ Router3 with via 'cli': executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ redistribute connected subnets
+ redistribute bgp 65000 subnets
+ network 192.168.2.0 0.0.0.255 area 0
+ network 192.168.4.0 0.0.0.255 area 0
+ network 192.168.77.0 0.0.0.255 area 0
+Router3#

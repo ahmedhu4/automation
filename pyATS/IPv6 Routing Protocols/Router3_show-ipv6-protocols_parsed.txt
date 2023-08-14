@@ -1,0 +1,64 @@
+{
+  "_exclude": [
+    "last_update",
+    " network",
+    "next_update"
+  ],
+  "protocols": {
+    "bgp": {
+      "instance": {
+        "default": {
+          "bgp_id": 65000,
+          "vrf": {
+            "default": {
+              "address_family": {
+                "ipv6": {
+                  "igp_sync": false,
+                  "neighbors": {
+                    "2001:DB8:FEED:77::1": {}
+                  },
+                  "redistribute": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "ospf": {
+      "vrf": {
+        "default": {
+          "address_family": {
+            "ipv6": {
+              "instance": {
+                "2": {
+                  "areas": {
+                    "0": {
+                      "configured_interfaces": [
+                        "GigabitEthernet0/0"
+                      ]
+                    }
+                  },
+                  "redistribute": {
+                    "bgp": {
+                      "65000": {
+                        "include_connected": false
+                      }
+                    },
+                    "connected": {
+                      "include_connected": false
+                    }
+                  },
+                  "router_id": "192.168.5.1",
+                  "total_normal_area": 1,
+                  "total_nssa_area": 0,
+                  "total_stub_area": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

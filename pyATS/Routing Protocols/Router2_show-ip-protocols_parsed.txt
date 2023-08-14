@@ -1,0 +1,77 @@
+{
+  "_exclude": [
+    "last_update",
+    " network",
+    "next_update"
+  ],
+  "protocols": {
+    "application": {
+      "flushed": 0,
+      "holddown": 0,
+      "incoming_filter_list": "not set",
+      "invalid": 0,
+      "maximum_path": 32,
+      "outgoing_filter_list": "not set",
+      "preference": {
+        "single_value": {
+          "all": 4
+        }
+      },
+      "update_frequency": 0
+    },
+    "eigrp": {
+      "protocol_under_dev": true
+    },
+    "ospf": {
+      "vrf": {
+        "default": {
+          "address_family": {
+            "ipv4": {
+              "instance": {
+                "1": {
+                  "incoming_filter_list": "not set",
+                  "network": {
+                    "192.168.2.0": {
+                      "area": "0",
+                      "netmask": "0.0.0.255"
+                    },
+                    "192.168.4.0": {
+                      "area": "0",
+                      "netmask": "0.0.0.255"
+                    },
+                    "192.168.77.0": {
+                      "area": "0",
+                      "netmask": "0.0.0.255"
+                    }
+                  },
+                  "outgoing_filter_list": "not set",
+                  "preference": {
+                    "single_value": {
+                      "all": 110
+                    }
+                  },
+                  "router_id": "192.168.3.1",
+                  "routing_information_sources": {
+                    "gateway": {
+                      "192.168.5.1": {
+                        "distance": 110,
+                        "last_update": "00:37:23"
+                      }
+                    }
+                  },
+                  "spf_control": {
+                    "paths": 4
+                  },
+                  "total_areas": 1,
+                  "total_normal_area": 1,
+                  "total_nssa_area": 0,
+                  "total_stub_area": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
