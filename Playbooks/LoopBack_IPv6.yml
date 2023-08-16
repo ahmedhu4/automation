@@ -6,7 +6,7 @@
     cisco.ios.ios_config:
       lines:
         - description Loopback
-        - ip address 192.168.6.3 255.255.255.0
+        - ip address 192.168.6.10 255.255.255.0
         - ipv6 address 2001:DB8:CAFE:6::5/64
       parents: interface Loopback0
 
