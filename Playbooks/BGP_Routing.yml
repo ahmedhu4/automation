@@ -12,7 +12,6 @@
           neighbors:
             - neighbor: 192.168.77.1
               remote_as: 65100
-            advertisement_interval: 10
           networks:
             - prefix: 192.168.77.0
               masklen: 24
